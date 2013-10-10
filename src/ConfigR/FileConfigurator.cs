@@ -14,7 +14,7 @@ namespace ConfigR
 
         public FileConfigurator(string path)
         {
-            this.path = path;
+            this.path = path.Replace(".vshost.", ".");
         }
 
         public string Path

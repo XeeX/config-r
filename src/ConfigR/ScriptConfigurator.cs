@@ -21,6 +21,7 @@ namespace ConfigR
             log.DebugFormat(CultureInfo.InvariantCulture, "The current directory is {0}", this.fileSystem.CurrentDirectory);
             var path = this.GetScriptPath();
             log.DebugFormat(CultureInfo.InvariantCulture, "Executing '{0}'", this.fileSystem.GetFullPath(path));
+            
             using (var executor = new ConfigRScriptExecutor(this.fileSystem))
             {
                 executor.AddReferenceAndImportNamespaces(new[] { typeof(Configurator) });
